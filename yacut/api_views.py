@@ -1,9 +1,13 @@
-from flask import jsonify, request
-from http import HTTPStatus
-from yacut import db, app
 import re
-from yacut.constants import EMPTY_REQUEST, get_unique_short_id, LINK_MISSING, WRONG_SHORT_LINK, LINK_REGEXP, \
-    SHORT_LINK_REGEXP, FLASH_SHORT_EXISTS, LINK_NOT_FOUND_MESSAGE
+from http import HTTPStatus
+
+from flask import jsonify, request
+
+from yacut import app, db
+from yacut.constants import (EMPTY_REQUEST, FLASH_SHORT_EXISTS, LINK_MISSING,
+                             LINK_NOT_FOUND_MESSAGE, LINK_REGEXP,
+                             SHORT_LINK_REGEXP, WRONG_SHORT_LINK,
+                             get_unique_short_id)
 from yacut.errors import InvalidAPIUsage
 from yacut.models import URLMap
 

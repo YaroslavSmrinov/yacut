@@ -1,7 +1,9 @@
-from flask import render_template, jsonify
 from http import HTTPStatus
+
+from flask import jsonify, render_template
+
 from . import app, db
-from .constants import LINK_NOT_FOUND_MESSAGE, INTERNAL_ERROR_MESSAGE
+from .constants import INTERNAL_ERROR_MESSAGE, LINK_NOT_FOUND_MESSAGE
 
 
 class InvalidAPIUsage(Exception):

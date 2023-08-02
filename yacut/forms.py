@@ -2,10 +2,9 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, URLField
 from wtforms.validators import URL, DataRequired, Length, Optional, Regexp
 
-from yacut.constants import (CUSTOMISED_LINK_MESSAGE,
-                             ERROR_FIELD_EMPTY,
-                             GIVEN_LINK_LENGTH, GIVEN_LINK_MESSAGE,
-                             SUBMISSION_BUTTON, ERROR_DISALLOWED_SYMBOL)
+from yacut.constants import (CUSTOMISED_LINK_MESSAGE, ERROR_DISALLOWED_SYMBOL,
+                             ERROR_FIELD_EMPTY, GIVEN_LINK_LENGTH,
+                             GIVEN_LINK_MESSAGE, SUBMISSION_BUTTON)
 from yacut.validators import CUSTOMISED_LINK_VALIDATOR
 
 
