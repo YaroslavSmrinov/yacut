@@ -6,10 +6,10 @@ from flask import jsonify, request
 from yacut import app, db
 from yacut.constants import (EMPTY_REQUEST, FLASH_SHORT_EXISTS, LINK_MISSING,
                              LINK_NOT_FOUND_MESSAGE, LINK_REGEXP,
-                             SHORT_LINK_REGEXP, WRONG_SHORT_LINK,
-                             get_unique_short_id)
+                             SHORT_LINK_REGEXP, WRONG_SHORT_LINK)
 from yacut.errors import InvalidAPIUsage
 from yacut.models import URLMap
+from yacut.utils import get_unique_short_id
 
 
 @app.route('/api/id/', methods=['POST'])
@@ -23,9 +23,9 @@ def create_short_api():
         raise InvalidAPIUsage(WRONG_SHORT_LINK)
     if not data.get('custom_id'):
         data['custom_id'] = get_unique_short_id()
-    elif URLMap.query.filter_by(short=data['custom_id']).first():
+    if URLMap.query.filter_by(short=data['custom_id']).first():
         raise InvalidAPIUsage(FLASH_SHORT_EXISTS.format(data['custom_id']))
-    elif not re.match(SHORT_LINK_REGEXP, data['custom_id']):
+    if not re.match(SHORT_LINK_REGEXP, data['custom_id']):
         raise InvalidAPIUsage(WRONG_SHORT_LINK)
     url_map = URLMap()
     url_map.from_dict(data)

@@ -1,19 +1,9 @@
-from random import choices
 from string import ascii_letters, digits
-
-from yacut.models import URLMap
 
 
 # General
-def get_unique_short_id():
-    while True:
-        short_link = ''.join(choices(ascii_letters + digits, k=6))
-        if not URLMap.query.filter_by(short=short_link).first():
-            return short_link
-
-
 ALLOWED_SYMBOLS = ascii_letters + digits
-long_strin_to_test = 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff'
+LENGTH_OF_GENERATED_LINK = 6
 # URLForm
 # Given link form field
 GIVEN_LINK_LENGTH = 2000

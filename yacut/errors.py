@@ -21,13 +21,18 @@ class InvalidAPIUsage(Exception):
 
 @app.errorhandler(404)
 def page_not_found(error):
-    return render_template('404.html', error_message=LINK_NOT_FOUND_MESSAGE), 404
+    return render_template(
+        '404.html',
+        error_message=LINK_NOT_FOUND_MESSAGE), HTTPStatus.NOT_FOUND
 
 
 @app.errorhandler(500)
 def internal_error(error):
     db.session.rollback()
-    return render_template('error.html', error_message=INTERNAL_ERROR_MESSAGE), 500
+    return render_template(
+        'error.html',
+        error_message=INTERNAL_ERROR_MESSAGE
+    ), HTTPStatus.INTERNAL_SERVER_ERROR
 
 
 @app.errorhandler(InvalidAPIUsage)
