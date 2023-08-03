@@ -1,7 +1,7 @@
 YaCut - генератор которких ссылок.
 [![Python](https://img.shields.io/badge/-Python-464646?style=flat&logo=Python&logoColor=ffffff&color=043A6B)](https://www.python.org/)
 [![Flask](https://img.shields.io/badge/-Flask-464646?style=flat&logo=Flask&logoColor=ffffff&color=043A6B)](https://flask-docs.readthedocs.io/en/latest/)
-[![SQLAlchemy](https://img.shields.io/badge/-SQLAlchemy-464646?style=flat&logo=SQLAlchemy&logoColor=ffffff&color=043A6B)](https://flask-docs.readthedocs.io/en/latest/)
+[![SQLAlchemy](https://img.shields.io/badge/-SQLAlchemy-464646?style=flat&logo=SQLAlchemy&logoColor=ffffff&color=043A6B)](https://www.sqlalchemy.org/)
 [![Jinja2](https://img.shields.io/badge/-Jinja2-464646?style=flat&logo=Jinja&logoColor=ffffff&color=043A6B)](https://jinja.palletsprojects.com/en/2.10.x/intro/)
 
 YaCut - учебный проект яндекс практикума. Проект генерирует сокращенную ссылку, сокращенная ссылка производит редирект по адресу, который был сокращен.
